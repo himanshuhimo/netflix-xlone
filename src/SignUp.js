@@ -1,77 +1,71 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./SignUp.css";
 import { useState } from "react";
 
-// function signup(e) {
-//   e.preventDefault();
-//   var username = document.getElementById("uname").value;
-//   var email = document.getElementById("email_id").value;
-//   var pass = document.getElementById("psw").value;
-//   var user = { username: username, email: email, password: pass };
-//   var json = JSON.stringify(user);
-//   localStorage.setItem(username, json);
-//   localStorage.setItem(pass, pass);
-//   localStorage.setItem(email, email);
-//   console.log("user added");
-// }
 
 function SignUp(props) {
   const [state, setState] = useState({
     email: "",
     password: "",
+    username: "",
+    confirmPassword: "",
   });
+
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setState((prevState) => ({
-      ...prevState,
-      [id]: value,
-    }));
+    setState({  ...state,   [id]: value });
   };
 
+  useEffect(() => {
+    console.log(state);
+  });
+
   const handleSubmitClick = (e) => {
-    // e.preventDefault();
-    // var user = { username: username, email: email, password: pass };
-    // var json = JSON.stringify(user);
-    //   localStorage.setItem(username, json);
-    //   localStorage.setItem(pass, pass);
-    //   localStorage.setItem(email, email);
     e.preventDefault();
     if (state.password === state.confirmPassword) {
       sendDetailsToServer();
+      alert('Added successfully');
+      setState({
+        email: "",
+        password: "",
+        username: "",
+        confirmPassword: "",
+      })
     } else {
-      props.showError("Passwords do not match");
+      alert("Passsword not matched...");
     }
-    console.log("USER aDDED");
   };
 
   const sendDetailsToServer = () => {
-    var username = document.getElementById("email").value;
-    var email = document.getElementById("email_id").value;
-    var pass = document.getElementById("password").value;
-
-    var user = [{ username: "username" }, { email: email }, { password: pass }];
-    var json = JSON.stringify(user);
-    localStorage.setItem(username, json);
-    localStorage.setItem(pass, pass);
-    localStorage.setItem(email, email);
+    const data = localStorage.getItem("data");
+    if (data) {
+      const jsonData = JSON.parse(data);
+      jsonData.push(state);
+      localStorage.setItem("data", JSON.stringify(jsonData));
+    } else {
+      localStorage.setItem("data", JSON.stringify([state]));
+    }
   };
 
   return (
     <>
       <div className="signup_div">
-        <button className="crossbtn">X</button>
+        <button className="crossbtn" onClick={props.closeHandler}><i className="fa fa-remove"></i></button>
         <h1>Sign Up</h1>
+        <br></br>
         <label>Username</label>
         <input
           type="text"
-          placeholder=""
+          placeholder="Username"
           className="signup_1"
-          id="email"
-          value={state.email}
+          id="username"
+          value={state.username}
           onChange={handleChange}
         />
+        <br></br>
         <label>Email Address</label>
-        <input type="text" placeholder="" className="signup_1" id="email_id" />
+        <input type="text" placeholder="Email" className="signup_1" id="email" value={state.email} onChange={handleChange} />
+        <br></br>
         <label>Password</label>
         <input
           type="text"
@@ -81,12 +75,16 @@ function SignUp(props) {
           value={state.password}
           onChange={handleChange}
         />
+        <br></br>
         <label>Confirm Password</label>
         <input
           type="text"
           placeholder=" Repeat Password"
           className="signup_1"
+          id="confirmPassword"
+          value={state.confirmPassword} onChange={handleChange}
         />
+        <br></br>
         <button
           type="button"
           className="signup_btn"

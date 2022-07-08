@@ -1,6 +1,6 @@
 .home_banner{
     /* position: centered; */
-    height: 700px;
+    height: 100vh;
     margin-top: 0px;
     background-size: "cover";
     background-position : "center center";

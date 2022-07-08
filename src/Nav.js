@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Nav.css";
 // import SignIn from "./SignIn";
 
-function Nav({ handleClick, handleClickSignUp }) {
+function Nav({ handleClickSignIn, handleClickSignUp }) {
   // useEffect(() => {
   //   window.addEventListener("scroll", () => {
   //     if (window.scrollY > 100) {
@@ -29,7 +29,7 @@ function Nav({ handleClick, handleClickSignUp }) {
       <button
         type="button"
         className="nav_avatar"
-        onClick={handleClick}
+        onClick={handleClickSignIn}
         // onClick={<SignIn />}
       >
         SIGN IN

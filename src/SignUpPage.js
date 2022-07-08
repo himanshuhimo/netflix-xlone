@@ -6,24 +6,26 @@ import SignUp from "./SignUp";
 import { useState } from "react";
 
 function SignUpPage() {
-  const [isShown, setIsShown] = useState(false);
-  const [isShownSignUp, setIsShownSignUp] = useState(false);
+  const [popUp, setPopUp] = useState("");
 
-  const handleClick = () => {
-    console.log("onshjbjh");
-    setIsShown(true);
+  const handleClickSignIn = () => {
+    setPopUp("IN");
   };
+
   const handleClickSignUp = () => {
-    console.log("yes iam visible");
-    setIsShownSignUp(true);
+    setPopUp("UP");
   };
+
+  const closeHandler = () => {
+    setPopUp("");
+  }
 
   return (
     <div>
-      <Nav handleClick={handleClick} handleClickSignUp={handleClickSignUp} />
+      <Nav handleClickSignIn={handleClickSignIn} handleClickSignUp={handleClickSignUp} />
       <Home />
-      {isShown && <SignIn />}
-      {isShownSignUp && <SignUp />}
+      { popUp === 'IN' ? <SignIn closeHandler={closeHandler} />: null }
+      { popUp === 'UP' ? <SignUp closeHandler={closeHandler} />: null }
     </div>
   );
 }

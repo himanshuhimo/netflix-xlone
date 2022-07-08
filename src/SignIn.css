@@ -23,7 +23,7 @@
 
   
   display : flex;
-  color: white;
+  /* color: white; */
   /* width: 300px; */
   padding: 20px;
   opacity: 90%;
@@ -55,7 +55,7 @@
     width: 300px;
     height: 35px;
     /* background-color: grey; */
-    color: white;
+    /* color: white; */
 }
 .s2{
     margin: 10px;
