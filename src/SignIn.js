@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./SignIn.css";
+import { History } from "react-router";
 
-function SignIn({ closeHandler }) {
+function SignIn({ closeHandler, history }) {
   const [item, setItem] = useState({
     email: "",
     password: ""
@@ -38,7 +39,8 @@ function SignIn({ closeHandler }) {
         }
       }
       if (flag){
-        alert("Welcome to netflix")
+        // alert("Welcome to netflix")
+        history.push("/home");
       } else {
         alert("Please enter correct username or password")
       }
