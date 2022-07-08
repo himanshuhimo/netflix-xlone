@@ -1,0 +1,79 @@
+.sign_in_div{
+    /* display: flex;
+    color: white;
+    width: 300px;
+    padding: 20px;
+    opacity: 50%;
+    flex-direction: column;
+    border: none;
+    justify-content: center; 
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+    font-size: xx-large;
+
+    position : absolute; Reposition logo from the natural layout
+  left: 75px;
+  top: 0px;
+  width: 300px;
+  height: 200px;
+  z-index: 2; */
+
+
+  
+  display : flex;
+  color: white;
+  /* width: 300px; */
+  padding: 20px;
+  opacity: 90%;
+  flex-direction: column;
+  border: none;
+  /* justify-content: center; */
+  /* align-content: center; */
+  align-items: center;
+  /* text-align: center; */
+  margin: 10px;
+  /* font-size: xx-large; */
+  position: absolute;
+  left: 33%;
+  top: 31%;
+  width: 377px;
+  height: 273px;
+  z-index: 1;  
+  background-color: rgb(38, 38, 38);
+  justify-content: center;
+}
+.signin_btn{
+    background-color: red;
+    margin: 30px;
+    width: 310px;
+    height: 42px;
+}
+.s1{
+    margin: 10px;
+    width: 300px;
+    height: 35px;
+    /* background-color: grey; */
+    color: white;
+}
+.s2{
+    margin: 10px;
+    width: 300px;
+    height: 35px;
+}
+
+
+h1{
+    display: flex;
+    font-size:xx-large;
+    align-content: flex-start;
+    justify-content: start;
+    margin-left :0px;
+    padding-left: 0px; 
+}
+.crossbtn{
+    right: -10px;
+    position: absolute;
+    top: -10px;
+}

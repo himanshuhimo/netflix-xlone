@@ -25,7 +25,27 @@
 
 .nav_avatar{
     position: fixed;
-    right: 20px;
-    width: 30px;
+    right: 120px;
+    /* width: 30px; */
     object-fit: contain;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 1px;
+    font-size:medium;
+    cursor: pointer;
+    
+}
+.nav_avatar_signup{
+    position: fixed;
+    right: 20px;
+    /* width: 30px; */
+    object-fit: contain;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 1px;
+    font-size:medium;
+    cursor: pointer;
+
 }

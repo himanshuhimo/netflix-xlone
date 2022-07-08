@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./Nav.css";
+// import SignIn from "./SignIn";
 
-function Nav() {
-  const [show, handleShow] = useState(false);
+function Nav({ handleClick, handleClickSignUp }) {
   // useEffect(() => {
   //   window.addEventListener("scroll", () => {
   //     if (window.scrollY > 100) {
@@ -14,6 +14,8 @@ function Nav() {
   //   };
   // }, []);
 
+  // function Nav({handleClickSignUp})
+
   return (
     // <div className={`nav ${show && "nav_black"}`}>
     <div className="nav">
@@ -22,8 +24,26 @@ function Nav() {
         src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
         alt="netflix Logo"
       />
-      <img className="nav_avatar" src="" alt="netflix Logo" />
+      {/* <img className="nav_avatar" src="" alt="netflix Logo" /> */}
+
+      <button
+        type="button"
+        className="nav_avatar"
+        onClick={handleClick}
+        // onClick={<SignIn />}
+      >
+        SIGN IN
+      </button>
+      <button
+        type="button"
+        className="nav_avatar_signup"
+        onClick={handleClickSignUp}
+        // onClick={<SignUp />}
+      >
+        SIGN UP
+      </button>
     </div>
+    /* </div> */
   );
 }
 

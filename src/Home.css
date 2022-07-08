@@ -1,0 +1,62 @@
+.home_banner{
+    /* position: centered; */
+    height: 700px;
+    margin-top: 0px;
+    background-size: "cover";
+    background-position : "center center";
+    /* padding-top: 130px; */
+    background-image: url(
+        'https://assets.nflxext.com/ffe/siteui/vlv3/8ee18735-ada3-45be-b383-a94701054bb9/bffa76da-b175-43bc-b7ef-e47a5095b535/IN-en-20220613-popsignuptwoweeks-perspective_alpha_website_small.jpg'
+      );
+
+    filter: brightness(50%);
+    display: flex;
+    justify-content: center;
+    
+}
+/* .bg_img{
+    background-image: url(
+        'https://assets.nflxext.com/ffe/siteui/vlv3/8ee18735-ada3-45be-b383-a94701054bb9/bffa76da-b175-43bc-b7ef-e47a5095b535/IN-en-20220613-popsignuptwoweeks-perspective_alpha_website_small.jpg'
+      );
+filter: brightness(50%);
+} */
+.home_banner_content{
+    /* margin-top: 130px; */
+    color: white;
+    /* align-items: center; */
+    /* margin-left: 200px;  */
+    font-size: x-large;
+    /* margin: auto; */
+    /* margin-top: 250px; */
+    width: 30%;
+    font-weight: bolder;
+    filter: brightness(100%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+
+}
+#banner_button{
+    border: none;
+    /* border-radius: 10px; */
+    /* width: 450px; */
+    /* height: 50px; */
+    font-size:xx-large;
+    /* margin-top: 5px; */
+    display: flex;
+    align-content: flex-start;
+
+}
+.get_started{
+    background-color: red;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: none;
+    padding: 3px;
+    /* margin: 5px; */
+    /* height: 50px; */
+    font-size: xx-large;
+    display: inline;
+
+}

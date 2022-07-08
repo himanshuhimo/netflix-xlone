@@ -1,0 +1,44 @@
+.signup_div{
+    
+    display: flex;
+    color: white;
+    padding: 20px;
+    opacity: 90%;
+    flex-direction: column;
+    border: none;
+    align-items: center;
+    margin: 10px;
+    position: absolute;
+    left: 33%;
+    top: 31%;
+    width: 450px;
+    height: 393px;
+    z-index: 1;
+    background-color: rgb(38, 38, 38);
+    justify-content: center;
+    
+}
+.signup_1{
+    /* margin-top: 0px; */
+    margin: 10px;
+    width: 300px;
+    height: 35px;
+
+}
+.signup_btn{
+    background-color: red;
+    margin: 30px;
+    width: 310px;
+    height: 45px;
+    border: none;
+}
+hr{
+    width: 350px;
+    height: 0.2px;
+    margin-bottom: 10px;
+}
+.crossbtn{
+    right: -10px;
+    position: absolute;
+    top: -10px;
+}
