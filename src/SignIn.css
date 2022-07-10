@@ -49,6 +49,9 @@
     margin: 30px;
     width: 310px;
     height: 42px;
+    cursor: pointer;
+    border: none;
+    
 }
 .s1{
     margin: 10px;

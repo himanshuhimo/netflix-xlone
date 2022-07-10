@@ -5,16 +5,7 @@ import { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
 // import { fa-solid fa-angle-right } from "@fortawesome/react-fontawesome";
 function Home() {
   return (
-    <header
-      className="home_banner"
-      // style={{
-      // backgroundSize: "cover",
-      // backgroundImage: `url(
-      //   'https://assets.nflxext.com/ffe/siteui/vlv3/8ee18735-ada3-45be-b383-a94701054bb9/bffa76da-b175-43bc-b7ef-e47a5095b535/IN-en-20220613-popsignuptwoweeks-perspective_alpha_website_small.jpg'
-      // )`,
-      // backgroundPosition: "center center",
-      // }}
-    >
+    <header className="home_banner">
       <div className="home_banner_content">
         <h1>Unlimited movies, TV shows and more.</h1>
         <h3>Watch ANywhere</h3>
@@ -30,9 +21,8 @@ function Home() {
         </span>
         <span>
           <button className="get_started">
-            Get Started
-            {/* <FontAwesomeIcon icon="fa-solid fa-angle-right" /> */}
-            <i class="fa-solid fa-angle-right"></i>
+            Get Started &nbsp;
+            <i className="fa fa-solid fa-angle-right"></i>
           </button>
         </span>
       </div>

@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./SignIn.css";
-import { History } from "react-router";
+// import MainPage from "./MainPage";
+import { useNavigate /* useParams */ } from "react-router-dom";
 
 function SignIn({ closeHandler, history }) {
+  // const { path } = useRouteMatch();
+  let navigate = useNavigate();
+  // let { username } = useParams();
   const [item, setItem] = useState({
     email: "",
-    password: ""
+    password: "",
   });
 
   const handleChange = (e) => {
@@ -20,41 +24,56 @@ function SignIn({ closeHandler, history }) {
   const handleSubmitClick = (e) => {
     e.preventDefault();
 
-
     const data = localStorage.getItem("data");
     if (!data) {
-      return
+      return;
     }
     const users = JSON.parse(data);
 
     if (!item.email || !item.password) {
-      alert("Please enter details", item.email, item.password)
-    }
-    else {
+      alert("Please enter details", item.email, item.password);
+    } else {
       let flag = false;
       for (let i = 0; i < users.length; i++) {
-        if (users[i].email == item.email && users[i].password == item.password) {
+        if (
+          users[i].email === item.email &&
+          users[i].password === item.password
+        ) {
           flag = true;
           break;
         }
       }
-      if (flag){
+      if (flag) {
         // alert("Welcome to netflix")
-        history.push("/home");
+        // history.push("/home");
+        navigate("home");
       } else {
-        alert("Please enter correct username or password")
+        alert("Please enter correct username or password");
       }
     }
   };
 
-
   return (
     <div className="sign_in_div">
-      <button className="crossbtn" onClick={closeHandler}>X</button>
+      <button className="crossbtn" onClick={closeHandler}>
+        X
+      </button>
       <h1>Sign In</h1>
-      <input type="text" id="email" placeholder="Email or phone number" className="s1" onChange={handleChange} />
-      <input type="text" id="password" placeholder="Password" className="s2" onChange={handleChange} />
-      <button type="button" className="signin_btn" onClick={handleSubmitClick}>
+      <input
+        type="text"
+        id="email"
+        placeholder="Email or phone number"
+        className="s1"
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        id="password"
+        placeholder="Password"
+        className="s2"
+        onChange={handleChange}
+      />
+      <button type="submit" className="signin_btn" onClick={handleSubmitClick}>
         Sign In
       </button>
       <span>

@@ -30,7 +30,7 @@ filter: brightness(50%);
     /* margin-top: 250px; */
     width: 30%;
     font-weight: bolder;
-    filter: brightness(100%);
+    /* filter: brightness(100%); */
     display: flex;
     justify-content: center;
     flex-direction: column;
