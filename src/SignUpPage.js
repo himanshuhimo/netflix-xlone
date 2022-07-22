@@ -18,14 +18,17 @@ function SignUpPage() {
 
   const closeHandler = () => {
     setPopUp("");
-  }
+  };
 
   return (
     <div>
-      <Nav handleClickSignIn={handleClickSignIn} handleClickSignUp={handleClickSignUp} />
+      <Nav
+        handleClickSignIn={handleClickSignIn}
+        handleClickSignUp={handleClickSignUp}
+      />
       <Home />
-      { popUp === 'IN' ? <SignIn closeHandler={closeHandler} />: null }
-      { popUp === 'UP' ? <SignUp closeHandler={closeHandler} />: null }
+      {popUp === "IN" ? <SignIn closeHandler={closeHandler} /> : null}
+      {popUp === "UP" ? <SignUp closeHandler={closeHandler} /> : null}
     </div>
   );
 }

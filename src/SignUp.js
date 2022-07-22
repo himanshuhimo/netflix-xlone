@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import "./SignUp.css";
 import { useState } from "react";
 
-
 function SignUp(props) {
   const [state, setState] = useState({
     email: "",
@@ -13,7 +12,7 @@ function SignUp(props) {
 
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setState({  ...state,   [id]: value });
+    setState({ ...state, [id]: value });
   };
 
   useEffect(() => {
@@ -24,13 +23,14 @@ function SignUp(props) {
     e.preventDefault();
     if (state.password === state.confirmPassword) {
       sendDetailsToServer();
-      alert('Added successfully');
+      alert("Added successfully");
+
       setState({
         email: "",
         password: "",
         username: "",
         confirmPassword: "",
-      })
+      });
     } else {
       alert("Passsword not matched...");
     }
@@ -50,7 +50,9 @@ function SignUp(props) {
   return (
     <>
       <div className="signup_div">
-        <button className="crossbtn" onClick={props.closeHandler}><i className="fa fa-remove"></i></button>
+        <button className="crossbtn" onClick={props.closeHandler}>
+          <i className="fa fa-remove"></i>
+        </button>
         <h1>Sign Up</h1>
         <br></br>
         <label>Username</label>
@@ -63,8 +65,15 @@ function SignUp(props) {
           onChange={handleChange}
         />
         <br></br>
-        <label>Email Address</label>
-        <input type="text" placeholder="Email" className="signup_1" id="email" value={state.email} onChange={handleChange} />
+        <label style={{ marginLeft: "-180px" }}>Email Address</label>
+        <input
+          type="text"
+          placeholder="Email"
+          className="signup_1"
+          id="email"
+          value={state.email}
+          onChange={handleChange}
+        />
         <br></br>
         <label>Password</label>
         <input
@@ -76,13 +85,14 @@ function SignUp(props) {
           onChange={handleChange}
         />
         <br></br>
-        <label>Confirm Password</label>
+        <label style={{ marginLeft: "-155px" }}>Confirm Password</label>
         <input
           type="text"
           placeholder=" Repeat Password"
           className="signup_1"
           id="confirmPassword"
-          value={state.confirmPassword} onChange={handleChange}
+          value={state.confirmPassword}
+          onChange={handleChange}
         />
         <br></br>
         <button

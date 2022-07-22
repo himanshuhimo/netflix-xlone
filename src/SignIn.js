@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./SignIn.css";
-// import MainPage from "./MainPage";
 import { useNavigate /* useParams */ } from "react-router-dom";
 
 function SignIn({ closeHandler, history }) {
-  // const { path } = useRouteMatch();
   let navigate = useNavigate();
-  // let { username } = useParams();
   const [item, setItem] = useState({
     email: "",
     password: "",
@@ -44,8 +41,7 @@ function SignIn({ closeHandler, history }) {
         }
       }
       if (flag) {
-        // alert("Welcome to netflix")
-        // history.push("/home");
+        alert("Welcome to netflix");
         navigate("home");
       } else {
         alert("Please enter correct username or password");
@@ -76,13 +72,17 @@ function SignIn({ closeHandler, history }) {
       <button type="submit" className="signin_btn" onClick={handleSubmitClick}>
         Sign In
       </button>
-      <span>
-        <input type="checkbox" name="rem" value="rem me" className="s3"></input>
-        <label for="rem" className="s3">
-          Remember me
-        </label>
+      <span className="s3">
+        <input
+          type="checkbox"
+          name="rem"
+          value="rem me"
+          className="3"
+          // style={{ marginLeft: "-118px" }}
+        ></input>
+        <p style={{ marginTop: "-8px" }}>&nbsp; Remember me</p>
       </span>
-      <p className="s4">New to Netflix?</p>
+      <p style={{ marginLeft: "-150px", marginTop: "50px" }}>New to Netflix?</p>
     </div>
   );
 }
